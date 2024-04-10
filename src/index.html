@@ -10,7 +10,7 @@ path: home
   {% include "./_includes/components/homepageSpiel.html" %}
 
   <!-- Product cards -->
-  <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 px-4 lg:mx-0">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-4 lg:mx-0">
 	{% set productCardList = collections.productCard %}
 
     {% for productCard in productCardList | sort(false, true, 'data.order') %}
