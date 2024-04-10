@@ -49,6 +49,10 @@ module.exports = function (eleventyConfig) {
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("./src/favicon-16x16.png");
+  eleventyConfig.addPassthroughCopy("./src/favicon-32x32.png");
+  eleventyConfig.addPassthroughCopy("./src/safari-pinned-tab.svg");
 
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
