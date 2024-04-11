@@ -11,15 +11,31 @@ layout: default
 	
 		<article class="prose my-4 max-w-none flex flex-col md:block">
 	
-			<form name="contact" netlify>
-				<p>
-				  <label>Name <input type="text" name="name" /></label>
-				</p>
-				<p>
-				  <label>Email <input type="email" name="email" /></label>
-				</p>
-				<p>
-				  <button type="submit">Send</button>
+			<form name="contact" netlify class="flex flex-col">
+				<label for="name">Name</label>
+				<input id="name" type="text" name="name" class="border border-gray-200 mb-3 p-2" />
+
+				<label for="email">Email</label>
+				<input id="email" type="email" name="email" class="border border-gray-200 mb-3 p-2" />
+
+				<label for="company">Company</label>
+				<input id="company" type="text" name="company" class="border border-gray-200 mb-3 p-2" />		
+				
+				<label for="service">Service required</label>
+				<select id="service" class="bg-white border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block p-2.5 pr-5 mb-3 md:w-96">
+					<option value="">Please select one</option>
+					<option value="affiliatemarketing">Affiliate Marketing</option>
+					<option value="seo">SEO</option>
+					<option value="webdesign">Web Design</option>
+					<option value="webdevelopment">Web Development</option>
+					<option value="digitalmarketing">Digital Marketing</option>
+				</select>
+				
+				<label for="details">Details</label>
+				<textarea id="details" name="details" class="border border-gray-200 mb-3 p-2.5"></textarea>
+
+				<p class="flex justify-end">
+				  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send</button>
 				</p>
 			  </form>
 
