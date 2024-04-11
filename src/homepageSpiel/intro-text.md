@@ -1,5 +1,14 @@
 ---
-title: Sed efficitur sem sit amet nunc porta,
+title: Arragon Affiliates - Super Fast, Fully Optimised Websites
 description: >-
-  Nullam eget pretium magna. Sed efficitur sem sit amet nunc porta, vel tempor ex tempus. Aliquam eu condimentum felis. Duis lorem lacus, iaculis eget pulvinar quis, tincidunt sit amet elit. Etiam faucibus, ligula et ornare facilisis, metus lectus ultricies nunc, et rutrum orci turpis molestie erat. Maecenas dictum semper urna, a pellentesque eros condimentum quis. Nunc nec erat nisi. In sagittis nisl dapibus, euismod turpis nec, faucibus arcu. Morbi accumsan tellus a eros luctus placerat. Nam a porta metus, ac tristique arcu. Curabitur ullamcorper elementum est, eget lobortis leo cursus quis.
+  At Arragon Affiliates, we specialise in building super-fast, fully optimised
+  affiliate websites tailored to meet the unique needs of our clients.
+  Additionally, we offer bespoke website templates and out-of-the-box solutions
+  for easy content updates and page building.
+
+
+  Our comprehensive services include ongoing support, SEO, local SEO, and digital marketing consultancy, as well as fully managed services. With over 20 years of experience in PPC and social media campaign management, we've had the privilege of working with established brands like ASOS, Apple, Boohoo, Mazuma Mobile, Party Gaming, Bet365, and the Mirror Group.
+
+
+  Backed by a team of seasoned web developers and software engineers, we bring a wealth of expertise cultivated through partnerships with industry giants such as The Telegraph and Perform Group. Whether you're seeking to elevate your online presence, optimise your digital strategy, or launch a cutting-edge website, Arragon Affiliates have the tools and experience to help.
 ---
