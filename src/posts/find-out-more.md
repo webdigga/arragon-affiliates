@@ -35,9 +35,9 @@ heroImage: /static/img/find-out-more.webp
 
 6.	Link Building: Build high-quality backlinks to improve your site's authority and credibility.
 
-7.	Content Building: Develop engaging and optimized content to attract and retain your target audience.
+7.	Content Building: Develop engaging and optimised content to attract and retain your target audience.
 
-8.	Landing Page Design: Create compelling landing pages optimized for conversion and lead generation.
+8.	Landing Page Design: Create compelling landing pages optimised for conversion and lead generation.
 
 9.	Landing Page and Website Optimisation: Continuously optimise your landing pages and website for improved performance and user experience.
 
