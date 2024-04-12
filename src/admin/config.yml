@@ -152,4 +152,4 @@ collections:
           - { label: Powered by, name: poweredBy, widget: string }
           - { label: Registered Address, name: registeredAddress, widget: string }
           - { label: Website, name: website, widget: string }
-          - { label: Compan number, name: companyNumber, widget: string }
+          - { label: Company number, name: companyNumber, widget: string }
