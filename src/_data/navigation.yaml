@@ -1,11 +1,16 @@
 items:
   - text: Home
     url: /
+    external: false
   - text: Divorce coaching
     url: https://divorce-coaching.com/
+    external: true
   - text: Moulded ear plugs
     url: https://moulded-ear-plugs.co.uk/
+    external: true
   - text: Seven Kings Web Design
     url: https://sevenkingswebdesign.co.uk/
+    external: true
   - text: Contact
     url: /contact/
+    external: false

@@ -32,8 +32,8 @@
 								@click="isOpen = false" 
 								class="text-ml inline-block text-gray-500 no-underline hover:text-indigo-500 py-2 px-4"
 								href="{{ item.url }}"
-								target="_blank"
-								rel="noopener">
+								{% if item.external %}target="_blank"{% endif %}
+								{% if item.external %}rel="noopener"{% endif %}>
 								{{ item.text }}
 							</a>
                         </li>
