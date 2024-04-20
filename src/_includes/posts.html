@@ -2,10 +2,12 @@
 layout: default
 ---
 
-<div
-	class="w-full bg-cover bg-center py-56"
-	style="background-image: url('{{ heroImage }}');">
-</div>
+{% if heroImage %}
+	<div
+		class="w-full bg-cover bg-center py-56"
+		style="background-image: url('{{ heroImage }}');">
+	</div>
+{% endif %}
 
 <div class="container 2xl:max-w-6xl mt-6 px-6 flex flex-col lg:flex-row justify-center">
 
