@@ -1,25 +1,29 @@
 <div
-	x-cloak
-	x-data="{open: false}"
-	x-init="() => setTimeout(() => open = !localStorage.getItem('consentGranted'), 500)"
-	class="bg-gray-100 flex flex-col justify-center"
->  
-	<div x-show="open"     
-			x-transition:enter-start="opacity-0 scale-90" 
-			x-transition:enter="transition duration-200 transform ease"
-			x-transition:leave="transition duration-200 transform ease"
-			x-transition:leave-end="opacity-0 scale-90"
-			class="max-w-screen-lg mx-auto fixed bg-white inset-x-5 p-5 bottom-40 rounded-lg drop-shadow-2xl flex gap-4 flex-wrap md:flex-nowrap text-center md:text-left items-center justify-center md:justify-between border-solid border border-gray-200">
-		<div class="w-full">
-			This website uses cookies to ensure you get the best experience on our website. Learn more in our
-			<a
-				href="/posts/privacy-policy/"
-				class="text-[color:var(--primary-color)] whitespace-nowrap hover:underline">
-				privacy policy
-			</a>
-		</div>
-		<div class="flex gap-4 items-center flex-shrink-0">
-			<button id="grant-consent" @click="open = false" class="bg-[color:var(--primary-color)] px-5 py-2 text-white rounded-md hover:bg-[color:var(--primary-hover)] focus:outline-none">Allow essential cookies</button>
-		</div>
-	</div>	   
+  x-cloak
+  x-data="{open: false}"
+  x-init="() => setTimeout(() => open = !localStorage.getItem('consentGranted'), 500)"
+  class="bg-gray-100 flex flex-col justify-center"
+>
+  <div
+    x-show="open"
+    x-transition:enter-start="opacity-0 scale-90"
+    x-transition:enter="transition duration-200 transform ease"
+    x-transition:leave="transition duration-200 transform ease"
+    x-transition:leave-end="opacity-0 scale-90"
+    class="bg-black/[.60] w-screen h-screen fixed top-0 left-0">
+    <div
+      class="z-50 max-w-screen-lg mx-auto fixed bg-white inset-x-5 p-5 bottom-1/4 rounded-lg drop-shadow-2xl flex gap-4 flex-wrap md:flex-nowrap text-center md:text-left items-center justify-center md:justify-between border-solid border border-gray-200">
+      <div class="w-full">
+        This website uses cookies to ensure you get the best experience on our website. Learn more in our
+        <a
+          href="/posts/privacy-policy/"
+          class="text-[color:var(--primary-color)] whitespace-nowrap hover:underline">
+          privacy policy
+        </a>
+      </div>
+      <div class="flex gap-4 items-center flex-shrink-0">
+        <button id="grant-consent" @click="open = false" class="bg-[color:var(--primary-color)] px-5 py-2 text-white rounded-md hover:bg-[color:var(--primary-hover)] focus:outline-none">Allow essential cookies</button>
+      </div>
+    </div>
+  </div>
 </div>
