@@ -26,13 +26,17 @@ collections:
         widget: "datetime"
         format: "YYYY-MM-DD"
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Type", name: "type", widget: "string", default: "article" }
+      - widget: select
+        label: "type"
+        name: "type"
+        create: true
+        options: ["article", "blog", "privacy"]
       - widget: select
         label: "tags"
         name: "tags"
         multiple: true
         create: true
-        options: ["article", "blog"]
+        options: ["article", "blog", "privacy"]
       - label: "Hero image"
         name: "heroImage"
         widget: "image"

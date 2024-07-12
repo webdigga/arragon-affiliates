@@ -55,6 +55,10 @@
 	<meta name="twitter:site" content="{{ settings.title }}">
     <meta name="og:locale" property="og:locale" content="en_GB">  
 
+    {% if title %}
+      <link rel="canonical" href="{{ env.site }}/{{ title | slugify }}/" />
+    {% endif %}
+
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
 
 	{% if env.isProd %}
