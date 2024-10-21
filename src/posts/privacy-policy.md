@@ -6,7 +6,6 @@ date: 2024-02-29T17:13:10.382Z
 type: privacy
 tags:
   - privacy
-ignore: true
 ---
 ## How we collect information
 
