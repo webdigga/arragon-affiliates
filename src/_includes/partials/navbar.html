@@ -2,10 +2,11 @@
     <nav class="flex items-center justify-center lg:justify-between flex-wrap p-6 lg:px-0 container mx-auto" x-data="{ isOpen: false }" @keydown.escape="isOpen = false"  @click.away="isOpen = false">
         <!--Logo etc-->
         <div class="flex items-center">
-            <a href="/" class="text-indigo-500 font-bold text-lg">
+            <a href="/" class="flex items-center">
 				<img src="{{ settings.logoUrl }}" alt="{{ settings.logoAlt }}" width="100px" height="100px" class="max-h-26" />
-			</a>
-			<div class="mb-0 text-2xl font-bold tracking-tight text-gray-900">{{ settings.siteName }}</div>
+        <div class="mb-0 text-2xl font-bold tracking-tight text-gray-900">{{ settings.siteName }}</div>
+      </a>
+			
         </div>
 
         <!--Toggle button (hidden on large screens)-->
