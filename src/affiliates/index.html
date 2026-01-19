@@ -1,0 +1,90 @@
+---
+layout: default
+title: Our Affiliate Services | Arragon Affiliates
+description: Explore our affiliate services offering everything from divorce coaching and academic support to currency transfers and entertainment. Quality services across multiple industries.
+type: website
+---
+
+{# ===== HERO SECTION ===== #}
+<section class="hero-gradient relative overflow-hidden">
+  <div class="absolute inset-0 pattern-grid pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 py-16 lg:py-24 relative z-10">
+    {# Breadcrumb #}
+    <nav class="breadcrumb mb-8 text-white">
+      <a href="/" class="underline hover:no-underline">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="font-semibold">Affiliates</span>
+    </nav>
+
+    <div class="max-w-3xl">
+      <h1 class="text-4xl lg:text-6xl font-bold text-white mb-4 text-shadow">
+        Our Affiliate Services
+      </h1>
+      <p class="text-xl lg:text-2xl text-white/90">
+        Discover our collection of quality services across multiple industries, from personal development to financial solutions.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# ===== ALL AFFILIATES GRID ===== #}
+<section class="py-16 lg:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title text-gray-900">All Affiliate Services</h2>
+    <p class="section-subtitle">
+      Click on any service to learn more about what they offer.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for affiliate in affiliates.affiliates | sort(false, true, 'order') %}
+        {% set linkToPage = true %}
+        {% include "../_includes/components/affiliate-card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ===== KABOOLY SECTION ===== #}
+<section class="py-16 lg:py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title text-gray-900">The Kabooly Family</h2>
+    <p class="section-subtitle">
+      Professional web and CRM solutions from the Kabooly brand.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {% for affiliate in affiliates.kabooly | sort(false, true, 'order') %}
+        {% set linkToPage = true %}
+        {% include "../_includes/components/affiliate-card.html" %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="/kabooly/" class="btn-dark">
+        Explore Kabooly Services
+        <span class="ml-2 w-5 h-5 inline-block">
+          {% set icon = 'arrow-right' %}
+          {% include "../_includes/components/icons.html" %}
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ===== CTA SECTION ===== #}
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Have Questions?</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+      Want to learn more about any of our services? Get in touch and we'll help you find the right solution for your needs.
+    </p>
+    <a href="/contact/" class="btn-dark">
+      Contact Us
+      <span class="ml-2 w-5 h-5 inline-block">
+        {% set icon = 'arrow-right' %}
+        {% include "../_includes/components/icons.html" %}
+      </span>
+    </a>
+  </div>
+</section>

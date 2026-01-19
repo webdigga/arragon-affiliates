@@ -2,15 +2,12 @@ items:
   - text: Home
     url: /
     external: false
-  - text: Divorce Coaching
-    url: https://divorce-coaching.com/
-    external: true
-  - text: Large Currency Transfers
-    url: https://largecurrencytransfers.com/
-    external: true
+  - text: Affiliates
+    url: /affiliates/
+    external: false
   - text: Kabooly
-    url: https://kabooly.com/
-    external: true
+    url: /kabooly/
+    external: false
   - text: Contact
     url: /contact/
     external: false

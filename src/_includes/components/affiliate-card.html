@@ -1,0 +1,51 @@
+{#
+  Affiliate Card Component - Image-free design with brand colors
+  Usage: Pass 'affiliate' object with name, slug, color, tagline, description, url, icon
+  Optional: 'linkToPage' - if true, links to internal page instead of external URL
+  Optional: 'urlPrefix' on affiliate - defaults to /affiliates if not specified
+#}
+
+{% set prefix = affiliate.urlPrefix if affiliate.urlPrefix else '/affiliates' %}
+{% set cardUrl = prefix + '/' + affiliate.slug + '/' if linkToPage else affiliate.url %}
+{% set isExternal = not linkToPage %}
+
+<article class="affiliate-card group" style="background: linear-gradient(135deg, {{ affiliate.color }} 0%, {{ affiliate.color }}dd 100%);">
+  <a
+    href="{{ cardUrl }}"
+    class="block p-8 h-full min-h-[280px] flex flex-col justify-between relative z-10"
+    {% if isExternal %}target="_blank" rel="noopener"{% endif %}
+  >
+    {# Pattern overlay #}
+    <div class="absolute inset-0 pattern-dots opacity-30 pointer-events-none"></div>
+
+    {# Icon #}
+    <div class="icon-container relative z-10">
+      {% set icon = affiliate.icon %}
+      {% include "./icons.html" %}
+    </div>
+
+    {# Content #}
+    <div class="relative z-10 flex-grow flex flex-col">
+      <h3 class="text-xl lg:text-2xl font-bold text-white mb-2 group-hover:translate-x-1 transition-transform duration-300">
+        {{ affiliate.name }}
+      </h3>
+
+      <p class="text-white/90 text-sm lg:text-base mb-4 flex-grow">
+        {{ affiliate.tagline }}
+      </p>
+
+      {# CTA #}
+      <div class="flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
+        <span>{% if isExternal %}Visit Site{% else %}Learn More{% endif %}</span>
+        <span class="ml-2 w-5 h-5">
+          {% if isExternal %}
+            {% set icon = 'external-link' %}
+          {% else %}
+            {% set icon = 'arrow-right' %}
+          {% endif %}
+          {% include "./icons.html" %}
+        </span>
+      </div>
+    </div>
+  </a>
+</article>

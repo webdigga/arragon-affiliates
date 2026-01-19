@@ -21,86 +21,43 @@
 
     <meta name="google-site-verification" content="IwdUHU1XbnDw_gDyu5C-5Q7nk3TxdNG016JiKHvHcSU" />
 
-    <title>
-      {% if title %}
-        {{ title }}
-      {% else %}
-        {{ settings.title }}
-      {% endif %}
-    </title>
-
-    {# Meta Description #}
-    {% if description %}
-      <meta name="description" content="{{ description }}"/>
-      <meta name="og:description" property="og:description" content="{{ description }}">
-      <meta name="twitter:description" content="{{ description }}">
+    {# Look up affiliate data based on frontmatter using custom filter #}
+    {% if affiliateType == "kabooly" %}
+      {% set affiliate = affiliates.kabooly | findBySlug(affiliateSlug) %}
     {% else %}
-      <meta name="description" content="{{ settings.description }}"/>
-      <meta name="og:description" property="og:description" content="{{ settings.description }}">
-      <meta name="twitter:description" content="{{ settings.description }}">
+      {% set affiliate = affiliates.affiliates | findBySlug(affiliateSlug) %}
     {% endif %}
 
-    {# Meta Title #}
-    {% if title %}
-      <meta name="og:title" property="og:title" content="{{ title }}">
-      <meta name="twitter:title" content="{{ title }}">
-    {% else %}
-      <meta name="og:title" property="og:title" content="{{ settings.title }}">
-      <meta name="twitter:title" content="{{ settings.title }}">
-    {% endif %}
+    <title>{{ affiliateName }} | Arragon Affiliates</title>
 
-    {# Meta Type #}
-    {% if type %}
-      <meta name="og:type" property="og:type" content="{{ type }}">
-    {% else %}
-      <meta name="og:type" property="og:type" content="{{ settings.type }}">
-    {% endif %}
+    <meta name="description" content="{{ affiliateDescription }}"/>
+    <meta name="og:description" property="og:description" content="{{ affiliateDescription }}">
+    <meta name="twitter:description" content="{{ affiliateDescription }}">
 
+    <meta name="og:title" property="og:title" content="{{ affiliateName }} | Arragon Affiliates">
+    <meta name="twitter:title" content="{{ affiliateName }} | Arragon Affiliates">
+
+    <meta name="og:type" property="og:type" content="website">
     <meta name="og:site_name" property="og:site_name" content="{{ settings.title }}">
     <meta name="twitter:site" content="{{ settings.title }}">
     <meta name="og:locale" property="og:locale" content="en_GB">
-    <meta name="og:url" property="og:url" content="{{ env.site }}{{ page.url }}">
 
-    {# Canonical URL #}
     <link rel="canonical" href="{{ env.site }}{{ page.url }}" />
 
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
 
-    {# Schema.org Structured Data - Organization #}
+    {# Schema.org Structured Data #}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "{{ settings.siteName }}",
-      "description": "{{ settings.description }}",
-      "url": "{{ env.site }}",
-      "logo": "{{ env.site }}{{ settings.logoUrl }}",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "57a Broadway",
-        "addressLocality": "Leigh-On-Sea",
-        "addressRegion": "Essex",
-        "postalCode": "SS9 1PE",
-        "addressCountry": "GB"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/arragon-digital-limited",
-        "https://www.facebook.com/arragondigitalandaffiliates/"
-      ]
-    }
-    </script>
-
-    {# Schema.org Structured Data - WebSite #}
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "{{ settings.siteName }}",
-      "url": "{{ env.site }}",
-      "description": "{{ settings.description }}",
-      "publisher": {
+      "@type": "Service",
+      "name": "{{ affiliateName }}",
+      "description": "{{ affiliateDescription }}",
+      "url": "{{ affiliateUrl }}",
+      "provider": {
         "@type": "Organization",
-        "name": "{{ settings.siteName }}"
+        "name": "Arragon Affiliates",
+        "url": "{{ env.site }}"
       }
     }
     </script>
@@ -132,7 +89,6 @@
     <script src="/static/js/alpine.js" defer></script>
 
     {% if env.isProd %}
-
       {% include "./partials/cookie-consent.html" %}
 
       <script>
@@ -140,7 +96,6 @@
 
         grantConsentButton.addEventListener("click", function() {
           localStorage.setItem("consentGranted", "true");
-
           loadGtagScript();
         });
 

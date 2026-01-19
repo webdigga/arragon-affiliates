@@ -33,6 +33,12 @@ module.exports = function (eleventyConfig) {
     return md.render(content);
   });
 
+  // Find item in array by slug
+  eleventyConfig.addFilter("findBySlug", (array, slug) => {
+    if (!array || !slug) return null;
+    return array.find(item => item.slug === slug);
+  });
+
   // To Support .yaml Extension in _data
   // You may remove this if you can use JSON
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));

@@ -1,0 +1,62 @@
+{#
+  Affiliate Hero Component - Full width hero for individual affiliate pages
+  Usage: Pass 'affiliate' object with name, color, tagline, url, icon
+#}
+
+<section class="relative overflow-hidden" style="background: linear-gradient(135deg, {{ affiliate.color }} 0%, {{ affiliate.color }}cc 50%, {{ affiliate.color }}99 100%);">
+  {# Pattern overlay #}
+  <div class="absolute inset-0 pattern-grid pointer-events-none"></div>
+
+  {# Decorative shapes #}
+  <div class="absolute top-10 right-10 w-64 h-64 bg-white/5 shape-blob animate-float hidden lg:block"></div>
+  <div class="absolute bottom-10 left-10 w-48 h-48 bg-white/5 shape-circle hidden lg:block"></div>
+
+  <div class="container mx-auto px-4 py-16 lg:py-24 relative z-10">
+    {# Breadcrumb #}
+    <nav class="breadcrumb mb-8 text-white">
+      <a href="/" class="underline hover:no-underline">Home</a>
+      <span class="breadcrumb-separator mx-2">/</span>
+      <a href="/affiliates/" class="underline hover:no-underline">Affiliates</a>
+      <span class="breadcrumb-separator mx-2">/</span>
+      <span class="font-semibold">{{ affiliate.name }}</span>
+    </nav>
+
+    <div class="max-w-3xl">
+      {# Icon #}
+      <div class="icon-container w-20 h-20 mb-6">
+        {% set icon = affiliate.icon %}
+        {% include "./icons.html" %}
+      </div>
+
+      {# Title #}
+      <h1 class="text-4xl lg:text-6xl font-bold text-white mb-4 text-shadow">
+        {{ affiliate.name }}
+      </h1>
+
+      {# Tagline #}
+      <p class="text-xl lg:text-2xl text-white/90 mb-8">
+        {{ affiliate.tagline }}
+      </p>
+
+      {# CTA Buttons #}
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="{{ affiliate.url }}"
+          target="_blank"
+          rel="noopener"
+          class="btn-primary"
+        >
+          Visit {{ affiliate.name }}
+          <span class="ml-2 w-5 h-5 inline-block">
+            {% set icon = 'external-link' %}
+            {% include "./icons.html" %}
+          </span>
+        </a>
+
+        <a href="/contact/" class="btn-secondary">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

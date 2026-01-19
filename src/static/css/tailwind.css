@@ -2,49 +2,209 @@
 @tailwind components;
 @tailwind utilities;
 
-/*Your Custom CSS Goes here*/
-
+/* ===== BRAND COLORS ===== */
 :root {
   --primary-color: #0b336f;
   --primary-hover: #08224a;
-  --affiliate-color: #FFD814;
-  --affiliate-hover: #F7CA00;
+
+  /* Affiliate brand colors */
+  --divorce-color: #c9a9a6;
+  --earplugs-color: #1d4ed8;
+  --alevel-color: #0b336f;
+  --currency-color: #000000;
+  --slotpicks-color: #00ff88;
+  --kabooly-color: #1d4ed8;
 }
 
+/* ===== TYPOGRAPHY ===== */
 h1 {
-  @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+  @apply text-4xl lg:text-6xl font-bold tracking-tight mb-4;
+}
+
+h2 {
+  @apply text-3xl lg:text-4xl font-bold tracking-tight mb-3;
 }
 
 h3 {
   @apply text-2xl font-bold mb-3;
 }
 
-/* Syntax Highlighting*/
+/* ===== GRADIENT BACKGROUNDS ===== */
+.gradient-divorce {
+  background: linear-gradient(135deg, #c9a9a6 0%, #b8928e 50%, #a67d78 100%);
+}
 
+.gradient-earplugs {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 50%, #1e3a8a 100%);
+}
+
+.gradient-alevel {
+  background: linear-gradient(135deg, #0b336f 0%, #0a2a5c 50%, #081f45 100%);
+}
+
+.gradient-currency {
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #0d0d0d 100%);
+}
+
+.gradient-slotpicks {
+  background: linear-gradient(135deg, #00ff88 0%, #00e67a 50%, #00cc6d 100%);
+}
+
+.gradient-kabooly {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 50%, #1e3a8a 100%);
+}
+
+/* Hero gradient animation */
+.hero-gradient {
+  background: linear-gradient(-45deg, #0b336f, #1d4ed8, #0b336f, #1e40af);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== CARD STYLES ===== */
+.affiliate-card {
+  @apply relative overflow-hidden rounded-2xl transition-all duration-300 ease-out;
+  @apply hover:scale-[1.02] hover:shadow-2xl;
+}
+
+.affiliate-card::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+}
+
+.affiliate-card:hover::before {
+  @apply opacity-100;
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-full transition-all duration-300;
+  @apply bg-white text-gray-900 hover:bg-gray-100 hover:scale-105;
+  @apply focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-full transition-all duration-300;
+  @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900;
+  @apply focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+}
+
+.btn-dark {
+  @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-full transition-all duration-300;
+  @apply bg-gray-900 text-white hover:bg-gray-800 hover:scale-105;
+  @apply focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2;
+}
+
+/* ===== ICON STYLES ===== */
+.icon-container {
+  @apply w-16 h-16 rounded-2xl flex items-center justify-center mb-4;
+  @apply bg-white/20 backdrop-blur-sm;
+}
+
+.icon-container svg {
+  @apply w-8 h-8 text-white;
+}
+
+/* ===== SECTION STYLES ===== */
+.section-title {
+  @apply text-3xl lg:text-5xl font-bold text-center mb-4;
+}
+
+.section-subtitle {
+  @apply text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12;
+}
+
+/* ===== GEOMETRIC PATTERNS ===== */
+.pattern-dots {
+  background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ===== DECORATIVE SHAPES ===== */
+.shape-blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.shape-circle {
+  @apply rounded-full;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+/* Syntax Highlighting */
 body :not(pre) > code[class*="language-"],
 body pre[class*="language-"] {
   @apply bg-gray-800;
 }
 
+/* Form styles */
 .booking-form {
-	min-height: 1130px;
+  min-height: 1130px;
 }
 
 @media (min-width: 698px) {
-	.booking-form {
-		min-height: 1246px;
-	}
+  .booking-form {
+    min-height: 1246px;
+  }
 }
 
 @media (min-width: 1024px) {
-	.article-content {
-		width: 848px;
-	}
+  .article-content {
+    width: 848px;
+  }
 
-	.article-content--large {
-		width: 1024px;
-	}
+  .article-content--large {
+    width: 1024px;
+  }
 }
 
 /* To stop flicker after deferring Alpine JS */
 [x-cloak] { display: none !important; }
+
+/* ===== BREADCRUMB STYLES ===== */
+.breadcrumb {
+  @apply flex items-center text-sm;
+}
+
+.breadcrumb a {
+  @apply transition-colors;
+}
+
+.breadcrumb-separator {
+  @apply mx-2;
+}
+
+/* ===== BENEFIT LIST STYLES ===== */
+.benefit-item {
+  @apply flex items-start gap-3 py-3;
+}
+
+.benefit-icon {
+  @apply w-6 h-6 text-green-500 flex-shrink-0 mt-0.5;
+}
+
+/* ===== RELATED SERVICES GRID ===== */
+.related-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}

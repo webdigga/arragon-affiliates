@@ -1,0 +1,119 @@
+# Affiliate Services Data
+# Each affiliate has its own brand color for the image-free design
+
+affiliates:
+  - name: Divorce Coaching
+    slug: divorce-coaching
+    url: https://divorce-coaching.com/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=divorce-coaching
+    color: "#c9a9a6"
+    tagline: Expert Divorce Coaching & Support
+    description: Empowering divorce coaching courses and support. Become a certified coach and help clients rebuild confidently.
+    longDescription: |
+      Divorce Coaching offers comprehensive courses and support for those navigating the challenging journey of divorce. Whether you're looking for personal guidance through your own divorce or seeking to become a certified divorce coach, our expert-led programs provide the tools and knowledge you need.
+    benefits:
+      - Certified divorce coaching programs
+      - One-on-one support sessions
+      - Rebuild confidence and clarity
+      - Help others through difficult transitions
+    icon: heart
+    order: 1
+
+  - name: Moulded Ear Plugs
+    slug: moulded-ear-plugs
+    url: https://moulded-ear-plugs.co.uk/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=moulded-ear-plugs
+    color: "#1d4ed8"
+    tagline: Custom-Fit Hearing Protection
+    description: High-quality, custom moulded ear plugs for ultimate comfort and noise reduction. Perfect for sleeping, swimming, and more.
+    longDescription: |
+      Discover the difference that custom-moulded ear plugs can make. Our high-quality ear plugs are designed for ultimate comfort and superior noise reduction, perfect for sleeping, swimming, concerts, motorsports, and industrial environments.
+    benefits:
+      - Custom-fitted for your ears
+      - Superior noise reduction
+      - Comfortable for extended wear
+      - Ideal for sleep, swim, and work
+    icon: shield
+    order: 2
+
+  - name: A-Level Retakes
+    slug: a-level-retakes
+    url: https://a-level-retakes.com/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=a-level-retakes
+    color: "#0b336f"
+    tagline: Achieve Your Academic Goals
+    description: Expert support for A-level retakes. Boost your grades and achieve your academic goals with tailored study plans.
+    longDescription: |
+      Don't let disappointing A-level results hold you back. Our expert tutors and tailored study plans are designed to help you retake your exams with confidence and achieve the grades you need for university or your chosen career path.
+    benefits:
+      - Expert tutors in all subjects
+      - Personalised study plans
+      - Proven exam techniques
+      - Boost your university prospects
+    icon: graduation
+    order: 3
+
+  - name: Large Currency Transfers
+    slug: large-currency-transfers
+    url: https://largecurrencytransfers.com/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=large-currency-transfers
+    color: "#000000"
+    tagline: Better Rates for Big Transfers
+    description: Competitive rates for large currency transfers. Save on fees and get the best value for your international transactions.
+    longDescription: |
+      When you're moving large sums of money internationally, every percentage point matters. We help you find the most competitive exchange rates and lowest fees for your large currency transfers, whether for property purchases, business transactions, or personal transfers.
+    benefits:
+      - Competitive exchange rates
+      - Low transfer fees
+      - Expert currency guidance
+      - Safe and secure transactions
+    icon: currency
+    order: 4
+
+  - name: Slot Picks
+    slug: slot-picks
+    url: https://slot-picks.com/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=slot-picks
+    color: "#059669"
+    tagline: Expert Slot Game Reviews & Picks
+    description: Discover the best slot games with expert reviews, tips, and picks. Find your next favourite game today.
+    longDescription: |
+      Looking for the best slot games to play? Slot Picks provides expert reviews, detailed game analysis, and top recommendations to help you find the most entertaining and rewarding slot games available online.
+    benefits:
+      - Expert game reviews
+      - RTP and volatility analysis
+      - Top game recommendations
+      - Tips for better gameplay
+    icon: star
+    order: 5
+
+# Kabooly Family - Separate section for Kabooly products
+kabooly:
+  - name: Kabooly Web Design
+    slug: web-design
+    urlPrefix: /kabooly
+    url: https://kabooly.com/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=kabooly-web-design
+    color: "#1d4ed8"
+    tagline: Professional Web Design Services
+    description: Professional web design services tailored to your business needs. Create a stunning online presence with Kabooly.
+    longDescription: |
+      Kabooly delivers professional web design services that help businesses stand out online. From stunning visual designs to user-friendly interfaces, we create websites that not only look great but also drive results for your business.
+    benefits:
+      - Custom website designs
+      - Mobile-responsive layouts
+      - SEO-friendly development
+      - Ongoing support and maintenance
+    icon: globe
+    order: 1
+
+  - name: Kabooly CRM
+    slug: kabooly-crm
+    urlPrefix: /kabooly
+    url: https://kabooly.com/crm/how-it-works/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=kabooly-crm
+    color: "#1d4ed8"
+    tagline: Streamline Your Customer Relationships
+    description: Powerful CRM solution to manage your customer relationships, streamline workflows, and grow your business.
+    longDescription: |
+      Kabooly CRM is a powerful customer relationship management solution designed to help businesses of all sizes manage their customer interactions, streamline sales processes, and drive growth. Easy to use, powerful features, and seamless integration.
+    benefits:
+      - Contact and lead management
+      - Sales pipeline tracking
+      - Automated workflows
+      - Reporting and analytics
+    icon: users
+    order: 2

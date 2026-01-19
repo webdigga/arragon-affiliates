@@ -1,0 +1,43 @@
+{#
+  Related Services Component - Shows other affiliates for internal linking
+  Usage: Pass 'currentSlug' to exclude current affiliate, 'limit' for max items
+#}
+
+{% set limit = limit or 3 %}
+
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title text-gray-900">Explore More Services</h2>
+    <p class="section-subtitle">Discover more of our quality services</p>
+
+    <div class="related-grid">
+      {% set count = 0 %}
+      {% for affiliate in affiliates.affiliates %}
+        {% if affiliate.slug != currentSlug and count < limit %}
+          {% set count = count + 1 %}
+          {% set linkToPage = true %}
+          {% include "./affiliate-card.html" %}
+        {% endif %}
+      {% endfor %}
+
+      {# Also include Kabooly family if we haven't reached limit #}
+      {% for affiliate in affiliates.kabooly %}
+        {% if affiliate.slug != currentSlug and count < limit %}
+          {% set count = count + 1 %}
+          {% set linkToPage = true %}
+          {% include "./affiliate-card.html" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="/affiliates/" class="btn-dark">
+        View All Affiliates
+        <span class="ml-2 w-5 h-5 inline-block">
+          {% set icon = 'arrow-right' %}
+          {% include "./icons.html" %}
+        </span>
+      </a>
+    </div>
+  </div>
+</section>

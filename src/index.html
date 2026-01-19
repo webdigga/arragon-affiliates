@@ -1,21 +1,130 @@
 ---
 layout: default
+title: Arragon Affiliates | Quality Affiliate Services
+description: Discover our collection of quality affiliate services - from divorce coaching and academic support to web design and CRM solutions.
 path: home
-type: home
+type: website
 ---
 
-{% include "./_includes/components/hero.html" %}
+{% include "./_includes/components/homepage-hero.html" %}
 
-<div class="container mx-auto flex flex-col justify-center items-center">
+{# ===== AFFILIATES SECTION ===== #}
+<section class="py-16 lg:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title text-gray-900">Our Affiliate Services</h2>
+    <p class="section-subtitle">
+      Quality services across multiple industries, from personal development to financial solutions.
+    </p>
 
-  {% include "./_includes/components/homepageSpiel.html" %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for affiliate in affiliates.affiliates | sort(false, true, 'order') %}
+        {% set linkToPage = true %}
+        {% include "./_includes/components/affiliate-card.html" %}
+      {% endfor %}
+    </div>
 
-  <!-- Product cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-4 lg:mx-0">
-	{% set productCardList = collections.productCard %}
-
-    {% for productCard in productCardList | sort(false, true, 'data.order') %}
-		{% include "./_includes/components/product-card.html" %}
-    {% endfor %}
+    <div class="text-center mt-12">
+      <a href="/affiliates/" class="btn-dark">
+        View All Affiliate Services
+        <span class="ml-2 w-5 h-5 inline-block">
+          {% set icon = 'arrow-right' %}
+          {% include "./_includes/components/icons.html" %}
+        </span>
+      </a>
+    </div>
   </div>
-</div>
+</section>
+
+{# ===== KABOOLY FAMILY SECTION ===== #}
+<section class="py-16 lg:py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title text-gray-900">The Kabooly Family</h2>
+    <p class="section-subtitle">
+      Web solutions and CRM tools from the Kabooly brand - professional services for modern businesses.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {% for affiliate in affiliates.kabooly | sort(false, true, 'order') %}
+        {% set linkToPage = true %}
+        {% include "./_includes/components/affiliate-card.html" %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/kabooly/" class="btn-dark">
+        Explore Kabooly Services
+        <span class="ml-2 w-5 h-5 inline-block">
+          {% set icon = 'arrow-right' %}
+          {% include "./_includes/components/icons.html" %}
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ===== WHY CHOOSE US SECTION ===== #}
+<section class="py-16 lg:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title text-gray-900">Why Choose Us?</h2>
+    <p class="section-subtitle">
+      Quality services you can rely on.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {# Quality Assured #}
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-brand rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <span class="w-8 h-8 text-white">
+            {% set icon = 'shield' %}
+            {% include "./_includes/components/icons.html" %}
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Quality Assured</h3>
+        <p class="text-gray-600">Every service meets our high standards of quality and reliability.</p>
+      </div>
+
+      {# Trusted Network #}
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-brand rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <span class="w-8 h-8 text-white">
+            {% set icon = 'users' %}
+            {% include "./_includes/components/icons.html" %}
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Trusted Network</h3>
+        <p class="text-gray-600">Part of the Arragon Digital family, with years of experience in digital services.</p>
+      </div>
+
+      {# Diverse Solutions #}
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-brand rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <span class="w-8 h-8 text-white">
+            {% set icon = 'star' %}
+            {% include "./_includes/components/icons.html" %}
+          </span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Diverse Solutions</h3>
+        <p class="text-gray-600">From personal development to financial services, we cover a wide range of needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== CTA SECTION ===== #}
+<section class="hero-gradient py-16 lg:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 pattern-dots pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 text-shadow">Ready to Get Started?</h2>
+    <p class="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+      Have questions about our services? We're here to help you find the right solution for your needs.
+    </p>
+    <a href="/contact/" class="btn-primary">
+      Contact Us Today
+      <span class="ml-2 w-5 h-5 inline-block">
+        {% set icon = 'arrow-right' %}
+        {% include "./_includes/components/icons.html" %}
+      </span>
+    </a>
+  </div>
+</section>

@@ -1,10 +1,61 @@
 ---
 layout: false
-permalink: sitemap.txt
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
 ignore: true
 ---
-{%- for item in collections.all %}
-  {% if not item.data.ignore and not r/^\/admin\//i.test(item.url) %}
-    {{ env.site }}{{ item.url | replace('.html', '') }}
-  {% endif %}
-{%- endfor %}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {# Homepage #}
+  <url>
+    <loc>{{ env.site }}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  {# Affiliates Hub #}
+  <url>
+    <loc>{{ env.site }}/affiliates/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  {# Individual Affiliate Pages #}
+  {% for affiliate in affiliates.affiliates %}
+  <url>
+    <loc>{{ env.site }}/affiliates/{{ affiliate.slug }}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% endfor %}
+
+  {# Kabooly Hub #}
+  <url>
+    <loc>{{ env.site }}/kabooly/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  {# Kabooly Individual Pages #}
+  {% for affiliate in affiliates.kabooly %}
+  <url>
+    <loc>{{ env.site }}/kabooly/{{ affiliate.slug }}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {% endfor %}
+
+  {# Contact Page #}
+  <url>
+    <loc>{{ env.site }}/contact/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  {# Privacy Policy #}
+  <url>
+    <loc>{{ env.site }}/privacy-policy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

@@ -1,0 +1,83 @@
+---
+layout: affiliate-page
+affiliateType: kabooly
+affiliateSlug: kabooly-crm
+affiliateName: Kabooly CRM
+affiliateDescription: Powerful CRM solution to manage your customer relationships, streamline workflows, and grow your business.
+affiliateUrl: https://kabooly.com/crm/how-it-works/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=kabooly-crm
+---
+
+{% set affiliate = affiliates.kabooly | findBySlug(affiliateSlug) %}
+
+{% include "../_includes/components/affiliate-hero.html" %}
+
+{# ===== ABOUT SECTION ===== #}
+<section class="py-16 lg:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">About {{ affiliate.name }}</h2>
+
+      <div class="prose prose-lg max-w-none text-gray-700 mb-10">
+        {{ affiliate.longDescription | markdown | safe }}
+      </div>
+
+      {# Benefits #}
+      <h3 class="text-2xl font-bold text-gray-900 mb-4">Key Benefits</h3>
+      <ul class="space-y-3 mb-10">
+        {% for benefit in affiliate.benefits %}
+          <li class="benefit-item">
+            <span class="benefit-icon text-green-500">
+              {% set icon = 'check' %}
+              {% include "../_includes/components/icons.html" %}
+            </span>
+            <span class="text-gray-700">{{ benefit }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {# CTA #}
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="{{ affiliate.url }}"
+          target="_blank"
+          rel="noopener"
+          class="btn-dark"
+        >
+          Learn How It Works
+          <span class="ml-2 w-5 h-5 inline-block">
+            {% set icon = 'external-link' %}
+            {% include "../_includes/components/icons.html" %}
+          </span>
+        </a>
+
+        <a href="/contact/" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-full border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== KABOOLY WEB DESIGN PROMO ===== #}
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Need a Website Too?</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Check out Kabooly's professional web design services to complement your CRM.
+      </p>
+      <a href="/kabooly/web-design/" class="btn-dark">
+        Explore Kabooly Web Design
+        <span class="ml-2 w-5 h-5 inline-block">
+          {% set icon = 'arrow-right' %}
+          {% include "../_includes/components/icons.html" %}
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ===== RELATED SERVICES ===== #}
+{% set currentSlug = affiliate.slug %}
+{% set limit = 3 %}
+{% include "../_includes/components/related-services.html" %}

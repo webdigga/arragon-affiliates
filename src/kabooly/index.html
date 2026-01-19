@@ -1,0 +1,172 @@
+---
+layout: default
+title: Kabooly - Web Design & CRM Solutions | Arragon Affiliates
+description: Professional web design and CRM solutions from the Kabooly family. Create stunning websites and streamline your customer relationships.
+type: website
+---
+
+{# ===== HERO SECTION ===== #}
+<section class="gradient-kabooly relative overflow-hidden">
+  <div class="absolute inset-0 pattern-grid pointer-events-none"></div>
+
+  <div class="absolute top-10 right-10 w-64 h-64 bg-white/5 shape-blob animate-float hidden lg:block"></div>
+  <div class="absolute bottom-10 left-10 w-48 h-48 bg-white/5 shape-circle hidden lg:block"></div>
+
+  <div class="container mx-auto px-4 py-16 lg:py-24 relative z-10">
+    {# Breadcrumb #}
+    <nav class="breadcrumb mb-8 text-white">
+      <a href="/" class="underline hover:no-underline">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="font-semibold">Kabooly</span>
+    </nav>
+
+    <div class="max-w-3xl">
+      <div class="icon-container w-20 h-20 mb-6">
+        {% set icon = 'globe' %}
+        {% include "../_includes/components/icons.html" %}
+      </div>
+
+      <h1 class="text-4xl lg:text-6xl font-bold text-white mb-4 text-shadow">
+        The Kabooly Family
+      </h1>
+      <p class="text-xl lg:text-2xl text-white/90">
+        Professional web design and CRM solutions for modern businesses. From stunning websites to streamlined customer management.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# ===== KABOOLY SERVICES ===== #}
+<section class="py-16 lg:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title text-gray-900">Our Solutions</h2>
+    <p class="section-subtitle">
+      Two powerful services to help your business thrive online.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      {% for affiliate in affiliates.kabooly | sort(false, true, 'order') %}
+        {% set linkToPage = true %}
+        {% include "../_includes/components/affiliate-card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ===== ABOUT KABOOLY ===== #}
+<section class="py-16 lg:py-24 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Why Choose Kabooly?</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <div class="w-14 h-14 bg-kabooly rounded-xl flex items-center justify-center mb-4">
+            <span class="w-7 h-7 text-white">
+              {% set icon = 'globe' %}
+              {% include "../_includes/components/icons.html" %}
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Web Design Excellence</h3>
+          <p class="text-gray-600">
+            Custom-designed websites that capture your brand's essence and convert visitors into customers. Mobile-responsive and SEO-optimised.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <div class="w-14 h-14 bg-kabooly rounded-xl flex items-center justify-center mb-4">
+            <span class="w-7 h-7 text-white">
+              {% set icon = 'users' %}
+              {% include "../_includes/components/icons.html" %}
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">CRM Integration</h3>
+          <p class="text-gray-600">
+            Powerful customer relationship management tools that help you track leads, manage contacts, and grow your business efficiently.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <div class="w-14 h-14 bg-kabooly rounded-xl flex items-center justify-center mb-4">
+            <span class="w-7 h-7 text-white">
+              {% set icon = 'shield' %}
+              {% include "../_includes/components/icons.html" %}
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Reliable Support</h3>
+          <p class="text-gray-600">
+            Ongoing maintenance and support to keep your digital presence running smoothly. We're here when you need us.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm">
+          <div class="w-14 h-14 bg-kabooly rounded-xl flex items-center justify-center mb-4">
+            <span class="w-7 h-7 text-white">
+              {% set icon = 'star' %}
+              {% include "../_includes/components/icons.html" %}
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Proven Results</h3>
+          <p class="text-gray-600">
+            Join businesses that have transformed their online presence and streamlined their operations with Kabooly solutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ===== CTA SECTION ===== #}
+<section class="gradient-kabooly py-16 lg:py-20 relative overflow-hidden">
+  <div class="absolute inset-0 pattern-dots pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 text-shadow">Ready to Transform Your Business?</h2>
+    <p class="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+      Get in touch to learn how Kabooly can help you build a stronger online presence and manage your customer relationships.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://kabooly.com/?utm_source=arragon_affiliates&utm_medium=referral&utm_campaign=kabooly-hub" target="_blank" rel="noopener" class="btn-primary">
+        Visit Kabooly.com
+        <span class="ml-2 w-5 h-5 inline-block">
+          {% set icon = 'external-link' %}
+          {% include "../_includes/components/icons.html" %}
+        </span>
+      </a>
+      <a href="/contact/" class="btn-secondary">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ===== OTHER AFFILIATES ===== #}
+<section class="py-16 lg:py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="section-title text-gray-900">Explore Other Services</h2>
+    <p class="section-subtitle">
+      Discover more trusted services from our affiliate network.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% set count = 0 %}
+      {% for affiliate in affiliates.affiliates %}
+        {% if count < 3 %}
+          {% set count = count + 1 %}
+          {% set linkToPage = true %}
+          {% include "../_includes/components/affiliate-card.html" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="/affiliates/" class="btn-dark">
+        View All Affiliates
+        <span class="ml-2 w-5 h-5 inline-block">
+          {% set icon = 'arrow-right' %}
+          {% include "../_includes/components/icons.html" %}
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
