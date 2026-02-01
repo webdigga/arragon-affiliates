@@ -48,9 +48,9 @@ type: website
             var baseUrl = 'https://crm.kabooly.com/embed/form/11';
             var params = [];
 
-            // Forward UTM parameters from parent page URL to iframe
+            // Forward UTM parameters and click IDs from parent page URL to iframe
             var urlParams = new URLSearchParams(window.location.search);
-            ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term'].forEach(function(param) {
+            ['utm_source', 'utm_campaign', 'utm_medium', 'utm_content', 'utm_term', 'gclid', 'fbclid'].forEach(function(param) {
               var value = urlParams.get(param);
               if (value) params.push(param + '=' + encodeURIComponent(value));
             });
